@@ -30,12 +30,14 @@ def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
     
     plt.xlim(0,1)
     plt.ylim(0,0.05)
-    plt.axhline(0.012,ls=':', color='orange')
+    #plt.axhspan(0,(TDGR[1,1]-TDGRc[1,1])/TDGR[1,1], color='green', alpha=0.2)
+    plt.axhline(0.012,ls='dashed', color='skyblue',linewidth=2)
+    plt.axhspan(0,0.012,color='skyblue', alpha=0.5)
+    plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
     
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=0.5,label="$2\sigma$ variation of $H_0$ given by Planck")
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG1[:,1])/TDGR[:,1],color='red',linewidth=1,label="MG: $r01=0.01,w01=0.0012$")
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG2[:,1])/TDGR[:,1],color='C0',linewidth=1.5,label="MG: $r01=0.02,w01=0.0012$")
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG3[:,1])/TDGR[:,1],color='C1',linewidth=2,label="MG: $r01=0.01,w01=0.0157$")
+    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG1[:,1])/TDGR[:,1],color='red', linewidth=2,label="MG: $r01=0.01,w01=0.0012$")
+    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG2[:,1])/TDGR[:,1],color='blue',linewidth=2.5,label="MG: $r01=0.02,w01=0.0012$")
+    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG3[:,1])/TDGR[:,1],color='purple',linewidth=3,label="MG: $r01=0.01,w01=0.0157$")
     
     
     
