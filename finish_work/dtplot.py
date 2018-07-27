@@ -29,15 +29,17 @@ def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
     
     
     plt.xlim(0,1)
-    plt.ylim(0,0.05)
+    plt.ylim(0,5.0)
     #plt.axhspan(0,(TDGR[1,1]-TDGRc[1,1])/TDGR[1,1], color='green', alpha=0.2)
-    plt.axhline(0.012,ls='dashed', color='skyblue',linewidth=2)
-    plt.axhspan(0,0.012,color='skyblue', alpha=0.5)
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
+    plt.axhline(1.17,ls='dashed', color='#01A9DB',linewidth=2)
+    plt.axhspan(0,1.17,color='#01A9DB', alpha=0.5)
+    plt.axhline(4.36,ls='dashed', color='#BDBDBD',linewidth=2)
+    plt.axhspan(0,4.36,color='#BDBDBD', alpha=0.5)
+    #plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
     
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG1[:,1])/TDGR[:,1],color='red', linewidth=2,label="MG: $r01=0.01,w01=0.0012$")
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG2[:,1])/TDGR[:,1],color='blue',linewidth=2.5,label="MG: $r01=0.02,w01=0.0012$")
-    plt.plot(TDGR[:,0],(TDGR[:,1]-TDMG3[:,1])/TDGR[:,1],color='purple',linewidth=3,label="MG: $r01=0.01,w01=0.0157$")
+    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG1[:,1])/TDGR[:,1],color='red', linewidth=2,label=r'MG: $r_1=0.01,w_1=0.0012$')
+    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG2[:,1])/TDGR[:,1],color='#084B8A',linewidth=2.5,label=r'MG: $r_1=0.02,w_1=0.0012$')
+    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG3[:,1])/TDGR[:,1],color='#FF8000',linewidth=3,label=r'MG: $r_1=0.01,w_1=0.0157$')
     
     
     
@@ -47,9 +49,9 @@ def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
     
     
     
-    plt.xlabel('$y(\\theta_E)$')
-    plt.ylabel("$(\Delta t-\Delta t_{GR})/\Delta t_{GR}$")
-    plt.savefig("deltatplot.pdf", format = 'pdf', bbox_inches = 'tight')
+    plt.xlabel('$y[\\theta_E]$')
+    plt.ylabel(r'$[(\Delta \tau_{MG}-\Delta \tau_{GR})/\Delta \tau_{GR}]\%$')
+    plt.savefig("delta_t_plot.pdf", format = 'pdf', bbox_inches = 'tight')
     
 if __name__=="__main__":    
     
