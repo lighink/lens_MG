@@ -14,7 +14,7 @@ from matplotlib import rc
 import matplotlib as mpl
 import numpy as np
 
-def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
+def plot(TDGR_work1,TDMG_work1,TDGRatMG_work2_1,TDMG_work2_1,TDGRatMG_work2_2,TDMG_work2_2):
     
     mpl.rcParams['text.usetex'] = 'True'
     rc('text.latex', preamble = r'\usepackage{mathrsfs}')
@@ -29,18 +29,18 @@ def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
     
     
     plt.xlim(0,1)
-    plt.ylim(0,5.0)
+    plt.ylim(0,8.0)
     #plt.axhspan(0,(TDGR[1,1]-TDGRc[1,1])/TDGR[1,1], color='green', alpha=0.2)
-    plt.axhline(1.17,ls='dashed', color='#01A9DB',linewidth=2)
-    plt.axhspan(0,1.17,color='#01A9DB', alpha=0.5)
-    plt.axhline(4.36,ls='dashed', color='#BDBDBD',linewidth=2)
-    plt.axhspan(0,4.36,color='#BDBDBD', alpha=0.5)
+    plt.axhline(1.166,ls='dashed', color='#01A9DB',linewidth=2)
+    plt.axhspan(0,1.166,color='#01A9DB', alpha=0.5)
+    plt.axhline(5.13,ls='dashed', color='#BDBDBD',linewidth=2)
+    plt.axhspan(0,5.13,color='#BDBDBD', alpha=0.5)
     #plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
     
-    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG1[:,1])/TDGR[:,1],color='red', linewidth=2,label=r'MG: $r_1=0.01,w_1=0.0012$')
-    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG2[:,1])/TDGR[:,1],color='#084B8A',linewidth=2.5,label=r'MG: $r_1=0.02,w_1=0.0012$')
-    plt.plot(TDGR[:,0],100.0*(TDGR[:,1]-TDMG3[:,1])/TDGR[:,1],color='#FF8000',linewidth=3,label=r'MG: $r_1=0.01,w_1=0.0157$')
+    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1[:,1])/TDGR_work1[:,1],color='red', linewidth=2,label=r'Method 1: $r_1=0.01,\frac{\delta\Sigma}{\Sigma}=10\%$')
+    plt.plot(TDGRatMG_work2_1[:,0],100.0*(TDMG_work2_1[:,1]-TDGRatMG_work2_1[:,1])/TDGRatMG_work2_1[:,1],color='#084B8A',linewidth=2.5,label=r'Method 2: $r_1=0.01,\frac{\delta\Sigma}{\Sigma}=4.5\%$')
     
+    plt.plot(TDGRatMG_work2_2[:,0],100.0*(TDMG_work2_2[:,1]-TDGRatMG_work2_2[:,1])/TDGRatMG_work2_2[:,1],color='#FF8000',linewidth=3,label=r'Method 2: $r_1=0.021,\frac{\delta\Sigma}{\Sigma}=10\%$')
     
     
     plt.legend(loc = 'upper right', fontsize = 10, frameon = True, numpoints = 1, handletextpad = 0.5, ncol = 1)
@@ -56,10 +56,11 @@ def plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3):
 if __name__=="__main__":    
     
     
-    TDGR=loadtxt("./TDGR_SIS.txt")
-    TDGRc=loadtxt("./TDGRc_SIS.txt")
-    TDMG1=loadtxt("./TDMG_SIS_1.txt")
-    TDMG2=loadtxt("./TDMG_SIS_2.txt")
-    TDMG3=loadtxt("./TDMG_SIS_3.txt")
-    
-    plot(TDGR,TDGRc,TDMG1,TDMG2,TDMG3)    
+    TDGR_work1=loadtxt("./TDGR_SIS_work1.txt")
+    TDMG_work1=loadtxt("./TDMG_SIS_work1.txt")
+    TDGRatMG_work2_1=loadtxt("./TDGRatMG_SIS_work2_1.txt")
+    TDMG_work2_1=loadtxt("./TDMG_SIS_work2_1.txt")
+    TDGRatMG_work2_2=loadtxt("./TDGRatMG_SIS_work2_2.txt")
+    TDMG_work2_2=loadtxt("./TDMG_SIS_work2_2.txt")
+
+    plot(TDGR_work1,TDMG_work1,TDGRatMG_work2_1,TDMG_work2_1,TDGRatMG_work2_2,TDMG_work2_2)    
