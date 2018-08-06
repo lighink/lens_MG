@@ -41,21 +41,21 @@ def plot(TDGRatMG_work2_1,TDMG_work2_1,TDGRatMG_work2_2,TDMG_work2_2,TDGRatMG_wo
    # plt.axvline(0.412,ls='dotted',color='#FF8000', linewidth=0.5)
     #plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
     
-    plt.plot(TDGRatMG_work2_1[0:689,0],100.0*(TDMG_work2_1[0:689,1]-TDGRatMG_work2_1[0:689,1])/TDGRatMG_work2_1[0:689,1],color='red',linewidth=2,label=r'$r_1=0.01,\frac{\delta\Sigma}{\Sigma}=10\%$')
+    plt.plot(TDGRatMG_work2_1[0:701,0],100.0*(TDMG_work2_1[0:701,1]-TDGRatMG_work2_1[0:701,1])/TDGRatMG_work2_1[0:701,1],color='red',linewidth=2,label=r'$r_1=0.01,\frac{\delta\Sigma}{\Sigma}=12\%$')
    
-    plt.plot(TDGRatMG_work2_1[689,0],100.0*(TDMG_work2_1[689,1]-TDGRatMG_work2_1[689,1])/TDGRatMG_work2_1[689,1],'r*')
+    plt.plot(TDGRatMG_work2_1[701,0],100.0*(TDMG_work2_1[701,1]-TDGRatMG_work2_1[701,1])/TDGRatMG_work2_1[701,1],'r*')
     
-    plt.plot(TDGRatMG_work2_2[0:659,0],100.0*(TDMG_work2_2[0:659,1]-TDGRatMG_work2_2[0:659,1])/TDGRatMG_work2_2[0:659,1],color='blue',linewidth=2.5,label=r'$r_1=0.02,\frac{\delta\Sigma}{\Sigma}=10\%$')
+    plt.plot(TDGRatMG_work2_2[0:652,0],100.0*(TDMG_work2_2[0:652,1]-TDGRatMG_work2_2[0:652,1])/TDGRatMG_work2_2[0:652,1],color='blue',linewidth=2.5,label=r'$r_1=0.02,\frac{\delta\Sigma}{\Sigma}=8\%$')
     
-    plt.plot(TDGRatMG_work2_2[659,0],100.0*(TDMG_work2_2[659,1]-TDGRatMG_work2_2[659,1])/TDGRatMG_work2_2[659,1],'b*')
+    plt.plot(TDGRatMG_work2_2[652,0],100.0*(TDMG_work2_2[652,1]-TDGRatMG_work2_2[652,1])/TDGRatMG_work2_2[652,1],'b*')
     
     plt.plot(TDGRatMG_work2_3[0:1069,0],100.0*(TDMG_work2_3[0:1069,1]-TDGRatMG_work2_3[0:1069,1])/TDGRatMG_work2_3[0:1069,1],color='#084B8A',linewidth=3,label=r'$r_1=0.01,\frac{\delta\Sigma}{\Sigma}=70\%$')
     
     plt.plot(TDGRatMG_work2_3[1069,0],100.0*(TDMG_work2_3[1069,1]-TDGRatMG_work2_3[1069,1])/TDGRatMG_work2_3[1069,1],'*',c='#084B8A')
     
-    plt.plot(TDGRatMG_work2_4[0:824,0],100.0*(TDMG_work2_4[0:824,1]-TDGRatMG_work2_4[0:824,1])/TDGRatMG_work2_4[0:824,1],color='#FF8000',linewidth=3.5,label=r'$r_1=0.02,\frac{\delta\Sigma}{\Sigma}=60\%$')
+    plt.plot(TDGRatMG_work2_4[0:817,0],100.0*(TDMG_work2_4[0:817,1]-TDGRatMG_work2_4[0:817,1])/TDGRatMG_work2_4[0:817,1],color='#FF8000',linewidth=3.5,label=r'$r_1=0.02,\frac{\delta\Sigma}{\Sigma}=58\%$')
     
-    plt.plot(TDGRatMG_work2_4[824,0],100.0*(TDMG_work2_4[824,1]-TDGRatMG_work2_4[824,1])/TDGRatMG_work2_4[824,1],'*',c='#FF8000')
+    plt.plot(TDGRatMG_work2_4[817,0],100.0*(TDMG_work2_4[817,1]-TDGRatMG_work2_4[817,1])/TDGRatMG_work2_4[817,1],'*',c='#FF8000')
     
     plt.legend(loc = 'upper right', fontsize = 10, frameon = True, numpoints = 1, handletextpad = 0.5, ncol = 1)
     
