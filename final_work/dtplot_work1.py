@@ -35,11 +35,11 @@ def plot(TDGR_work1,TDMG_work1_1,TDMG_work1_2,TDMG_work1_3):
     plt.axhspan(0,5.13,color='#BDBDBD', alpha=0.5)
     #plt.plot(TDGR[:,0],(TDGR[:,1]-TDGRc[:,1])/TDGR[:,1],ls='dashed', color='green',linewidth=1.5,label="$2\sigma$ variation of $H_0$ given by Planck")
     
-    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_1[:,1])/TDGR_work1[:,1],color='red', linewidth=2,label=r'$r_1=0.01,\frac{\delta\Sigma}{\Sigma}=18\%$')
+    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_1[:,1])/TDGR_work1[:,1],color='red', linewidth=2,label=r'$r_{01}=10~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=18\%$')
     
-    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_2[:,1])/TDGR_work1[:,1],color='blue', linewidth=2.5,label=r'$r_1=0.02,\frac{\delta\Sigma}{\Sigma}=50\%$')
+    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_2[:,1])/TDGR_work1[:,1],color='blue', linewidth=2.5,label=r'$r_{01}=20~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=50\%$')
     
-    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_3[:,1])/TDGR_work1[:,1],color='purple', linewidth=3,label=r'$r_1=0.01,\frac{\delta\Sigma}{\Sigma}=50\%$')
+    plt.plot(TDGR_work1[:,0],100.0*(TDGR_work1[:,1]-TDMG_work1_3[:,1])/TDGR_work1[:,1],color='purple', linewidth=3,label=r'$r_{01}=10~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=50\%$')
     
     plt.legend(loc = 'upper right', fontsize = 10, frameon = True, numpoints = 1, handletextpad = 0.5, ncol = 1)
     
@@ -48,7 +48,7 @@ def plot(TDGR_work1,TDMG_work1_1,TDMG_work1_2,TDMG_work1_3):
     
     
     plt.xlabel('$y[\\theta_E]$')
-    plt.ylabel(r'$[(\Delta \tau_{MG}-\Delta \tau_{GR})/\Delta \tau_{GR}]\%$')
+    plt.ylabel(r'$[(\Delta t_{GR}-\Delta t_{MG})/\Delta t_{GR}]\%$')
     plt.savefig("delta_t_plot_1.pdf", format = 'pdf', bbox_inches = 'tight')
     
 if __name__=="__main__":    
