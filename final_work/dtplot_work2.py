@@ -43,19 +43,19 @@ def plot(TDGRatMG_work2_1,TDMG_work2_1,TDGRatMG_work2_2,TDMG_work2_2,TDGRatMG_wo
     
     plt.plot(TDGRatMG_work2_1[0:677,0],100.0*(TDMG_work2_1[0:677,1]-TDGRatMG_work2_1[0:677,1])/TDGRatMG_work2_1[0:677,1],color='deeppink',linewidth=2,label=r'$r_{01}=10~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=12\%$')
    
-    plt.plot(TDGRatMG_work2_1[677,0],100.0*(TDMG_work2_1[677,1]-TDGRatMG_work2_1[677,1])/TDGRatMG_work2_1[677,1],'r*')
-    
+    plt.plot(TDGRatMG_work2_1[677,0],100.0*(TDMG_work2_1[677,1]-TDGRatMG_work2_1[677,1])/TDGRatMG_work2_1[677,1],'r*', markersize=10)
+   
     plt.plot(TDGRatMG_work2_2[0:627,0],100.0*(TDMG_work2_2[0:627,1]-TDGRatMG_work2_2[0:627,1])/TDGRatMG_work2_2[0:627,1],color='blue',linewidth=2.5,label=r'$r_{01}=20~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=8\%$')
     
-    plt.plot(TDGRatMG_work2_2[627,0],100.0*(TDMG_work2_2[627,1]-TDGRatMG_work2_2[627,1])/TDGRatMG_work2_2[627,1],'r*')
+    plt.plot(TDGRatMG_work2_2[627,0],100.0*(TDMG_work2_2[627,1]-TDGRatMG_work2_2[627,1])/TDGRatMG_work2_2[627,1],'r*', markersize=10)
     
     plt.plot(TDGRatMG_work2_3[0:1043,0],100.0*(TDMG_work2_3[0:1043,1]-TDGRatMG_work2_3[0:1043,1])/TDGRatMG_work2_3[0:1043,1],color='#084B8A',linewidth=3,label=r'$r_{01}=10~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=70\%$')
     
-    plt.plot(TDGRatMG_work2_3[1043,0],100.0*(TDMG_work2_3[1043,1]-TDGRatMG_work2_3[1043,1])/TDGRatMG_work2_3[1043,1],'r*')
+    plt.plot(TDGRatMG_work2_3[1043,0],100.0*(TDMG_work2_3[1043,1]-TDGRatMG_work2_3[1043,1])/TDGRatMG_work2_3[1043,1],'r*', markersize=10)
     
     plt.plot(TDGRatMG_work2_4[0:789,0],100.0*(TDMG_work2_4[0:789,1]-TDGRatMG_work2_4[0:789,1])/TDGRatMG_work2_4[0:789,1],color='#FF8000',linewidth=3.5,label=r'$r_{01}=20~\texttt{kpc},\frac{\delta\Sigma}{\Sigma}=58\%$')
     
-    plt.plot(TDGRatMG_work2_4[789,0],100.0*(TDMG_work2_4[789,1]-TDGRatMG_work2_4[789,1])/TDGRatMG_work2_4[789,1],'r*', label='SIS broken')
+    plt.plot(TDGRatMG_work2_4[789,0],100.0*(TDMG_work2_4[789,1]-TDGRatMG_work2_4[789,1])/TDGRatMG_work2_4[789,1],'r*', markersize=10,  label='SIS broken')
     
     plt.legend(loc = 'upper right', fontsize = 10, frameon = True, numpoints = 1, handletextpad = 0.5, ncol = 1)
     
